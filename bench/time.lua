@@ -3,6 +3,7 @@ local luamark = require("luamark")
 local rsjson = require("rsjson").serde
 local dkjson = require("dkjson").use_lpeg()
 local cjson = require("cjson").new()
+local rapidjson = require("rapidjson")
 
 local encoding_test = {
     one = 1,
@@ -21,7 +22,27 @@ local encoding_test = {
             [1] = "one",
             [2] = "two",
             [3] = "three",
-        },
+         },
+         nested = {
+            one = 1,
+            two = "2",
+            three = {4,5,6},
+            ["four"] = {
+                  [1] = "one",
+                  [2] = "two",
+                  [3] = "three",
+            },
+            nested = {
+               one = 1,
+               two = "2",
+               three = {4,5,6},
+               ["four"] = {
+                     [1] = "one",
+                     [2] = "two",
+                     [3] = "three",
+               },
+            },
+         },
     },
 }
 
@@ -41,6 +62,9 @@ local encoding = luamark.compare_time({
    cjson = function(ctx, p)
       for _ = 1, iters do cjson.encode(encoding_test) end
    end,
+   rapidjson = function(ctx, p)
+      for _ = 1, iters do rapidjson.encode(encoding_test) end
+   end
    },
    {
       params = { pretty = { false, true } },
@@ -70,6 +94,9 @@ local decoding = luamark.compare_time({
    end,
    cjson = function()
       for _ = 1, iters do cjson.decode(decoding_test) end
+   end,
+   rapidjson = function()
+      for _ = 1, iters do rapidjson.decode(decoding_test) end
    end,
 })
 
