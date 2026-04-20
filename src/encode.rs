@@ -29,11 +29,11 @@ pub(crate) fn encode(
             let prefix = config.prefix.repeat(n);
             let formatter = PrettyFormatter::with_indent(prefix.as_bytes());
             let mut ser = Serializer::with_formatter(&mut writer, formatter);
-            let _ = obj.serialize(&mut ser).map_err(LuaError::external);
+            obj.serialize(&mut ser).map_err(LuaError::external)?;
         },
         None => {
             let mut ser = Serializer::new(&mut writer);
-            let _ = obj.serialize(&mut ser).map_err(LuaError::external);
+            obj.serialize(&mut ser).map_err(LuaError::external)?;
         },
     }
 
