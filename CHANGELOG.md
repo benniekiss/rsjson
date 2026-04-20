@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1](https://github.com/benniekiss/rsjson-lua/compare/v0.2.0...v0.2.1) - 2026-04-20
+
+### Fixed
+
+- use size_hint when deserializing table
+- don't silently swallow serialization errors
+
+### Other
+
+- *(docs)* update benchmark commands
+- add benchmark deps to test_dependencies table
+- release v0.1.6 ([#9](https://github.com/benniekiss/rsjson-lua/pull/9))
+
 ## [0.2.0](https://github.com/benniekiss/rsjson-lua/compare/v0.1.5...v0.2.0) - 2026-04-20
 
 ### Added
