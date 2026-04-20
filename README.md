@@ -4,7 +4,7 @@
 ![Version](https://img.shields.io/github/v/release/benniekiss/rsjson)
 [![LuaRocks](https://img.shields.io/luarocks/v/benniekiss/rsjson)](https://luarocks.org/modules/benniekiss/rsjson)
 
-lua bindings for [serde-json](https://github.com/serde-rs/json) using [mlua](https://github.com/mlua-rs/mlua)
+a json library for lua using [serde-json](https://github.com/serde-rs/json) and [mlua](https://github.com/mlua-rs/mlua)
 
 ## Documentation
 
