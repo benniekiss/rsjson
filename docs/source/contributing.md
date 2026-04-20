@@ -30,8 +30,8 @@ here](https://prek.j178.dev/installation/)
 
 ```shell
 # Clone the repo
-git clone https://github.com/benniekiss/rsjson
-cd rsjson
+git clone https://github.com/benniekiss/rsjson-lua
+cd rsjson-lua
 
 # Install the toolchain for the project
 rustup install

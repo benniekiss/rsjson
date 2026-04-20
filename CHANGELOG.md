@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.5](https://github.com/benniekiss/rsjson/compare/v0.1.4...v0.1.5) - 2026-04-20
+## [0.1.5](https://github.com/benniekiss/rsjson-lua/compare/v0.1.4...v0.1.5) - 2026-04-20
 
 ### Fixed
 
@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - *(ci)* use trusted publishing
 - cleanup readme
 
-## [0.1.4](https://github.com/benniekiss/rsjson/compare/v0.1.3...v0.1.4) - 2026-04-20
+## [0.1.4](https://github.com/benniekiss/rsjson-lua/compare/v0.1.3...v0.1.4) - 2026-04-20
 
 ### Added
 
@@ -31,14 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other
 
-- release v0.1.3 ([#6](https://github.com/benniekiss/rsjson/pull/6))
-- release v0.1.2 ([#5](https://github.com/benniekiss/rsjson/pull/5))
-- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson/pull/1))
+- release v0.1.3 ([#6](https://github.com/benniekiss/rsjson-lua/pull/6))
+- release v0.1.2 ([#5](https://github.com/benniekiss/rsjson-lua/pull/5))
+- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson-lua/pull/1))
 - set initial crates.io token
-- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson/pull/2))
+- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson-lua/pull/2))
 - *(deps)* update renovatebot/github-action action to v46.1.10
 
-## [0.1.3](https://github.com/benniekiss/rsjson/compare/v0.1.2...v0.1.3) - 2026-04-20
+## [0.1.3](https://github.com/benniekiss/rsjson-lua/compare/v0.1.2...v0.1.3) - 2026-04-20
 
 ### Added
 
@@ -50,13 +50,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other
 
-- release v0.1.2 ([#5](https://github.com/benniekiss/rsjson/pull/5))
-- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson/pull/1))
+- release v0.1.2 ([#5](https://github.com/benniekiss/rsjson-lua/pull/5))
+- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson-lua/pull/1))
 - set initial crates.io token
-- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson/pull/2))
+- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson-lua/pull/2))
 - *(deps)* update renovatebot/github-action action to v46.1.10
 
-## [0.1.2](https://github.com/benniekiss/rsjson/compare/v0.1.1...v0.1.2) - 2026-04-20
+## [0.1.2](https://github.com/benniekiss/rsjson-lua/compare/v0.1.1...v0.1.2) - 2026-04-20
 
 ### Added
 
@@ -64,12 +64,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Other
 
-- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson/pull/1))
+- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson-lua/pull/1))
 - set initial crates.io token
-- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson/pull/2))
+- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson-lua/pull/2))
 - *(deps)* update renovatebot/github-action action to v46.1.10
 
-## [0.1.1](https://github.com/benniekiss/rsjson/compare/v0.1.0...v0.1.1) - 2026-04-20
+## [0.1.1](https://github.com/benniekiss/rsjson-lua/compare/v0.1.0...v0.1.1) - 2026-04-20
 
 ### Added
 
@@ -78,5 +78,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Other
 
 - set initial crates.io token
-- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson/pull/2))
+- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson-lua/pull/2))
 - *(deps)* update renovatebot/github-action action to v46.1.10

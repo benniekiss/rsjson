@@ -1,8 +1,8 @@
-# rsjson
+# rsjson-lua
 
-![License](https://img.shields.io/github/license/benniekiss/rsjson)
-![Version](https://img.shields.io/github/v/release/benniekiss/rsjson)
-[![LuaRocks](https://img.shields.io/luarocks/v/benniekiss/rsjson)](https://luarocks.org/modules/benniekiss/rsjson)
+![License](https://img.shields.io/github/license/benniekiss/rsjson-lua)
+![Version](https://img.shields.io/github/v/release/benniekiss/rsjson-lua)
+[![LuaRocks](https://img.shields.io/luarocks/v/benniekiss/rsjson-lua)](https://luarocks.org/modules/benniekiss/rsjson-lua)
 
 a json library for lua using [serde-json](https://github.com/serde-rs/json) and [mlua](https://github.com/mlua-rs/mlua)
 

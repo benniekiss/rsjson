@@ -4,8 +4,8 @@ lua = ">=5.1"
 [description]
 summary = "a json library for lua using serde-json"
 maintainer = "benniekiss"
-homepage = "https://github.com/benniekiss/rsjson"
-issues_url = "https://github.com/benniekiss/rsjson/issues"
+homepage = "https://github.com/benniekiss/rsjson-lua"
+issues_url = "https://github.com/benniekiss/rsjson-lua/issues"
 labels = ["json", "rust", "bindings"]
 license = "MIT"
 
