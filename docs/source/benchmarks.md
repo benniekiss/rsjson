@@ -5,13 +5,11 @@ commands, where `{iters}` is the number of iterations to run (defaults to
 `100`). They use the [`luamark`](https://github.com/jeffzi/luamark) module
 
 ```shell
-lx add lua-cjson dkjson lpeg luamark
-
 # time benchmarks
-lx lua bench/time.lua {iters}
+lx --lua-version 5.4 lua --test bench/time.lua {iters}
 
 # memory benchmarks
-lx lua bench/mem.lua {iters}
+lx --lua-version 5.4 lua --test bench/mem.lua {iters}
 ```
 
 Here is a comparison between `cjson` and `dkjson` (with the lpeg extension enabled):
@@ -20,51 +18,56 @@ Time:
 
 ```shell
 --------------------
-Encoding (Time): 10000 iters
+Encoding (Time): 1000 iters
 --------------------
 pretty=false
- Name   Rank      Relative         Median       Ops  
-------  ----  ----------------  -------------  ------
-cjson      1  █             1x   12ms ± 500us  83.3/s
-rsjson     2  ██        ↓4.42x   53ms ± 500us  18.9/s
-dkjson     3  ████████ ↓13.67x  164ms ± 500us   6.1/s
+  Name     Rank     Relative     Median    Ops  
+---------  ----  --------------  ------  -------
+cjson        ≈1  █           1x     2ms    500/s
+rapidjson    ≈1  █           1x     2ms    500/s
+rsjson        3  ██       ↓4.5x     9ms  111.1/s
+dkjson        4  ████████  ↓16x    32ms   31.2/s
 
-# NOTE: cjson does not have a pretty-print option
+# NOTE: cjson and rapidjson do not implement pretty formatting
 pretty=true
- Name   Rank      Relative         Median       Ops  
-------  ----  ----------------  -------------  ------
-cjson      1  █             1x   12ms ± 500us  83.3/s
-rsjson     2  ██        ↓4.92x           59ms  16.9/s
-dkjson     3  ████████ ↓15.25x  183ms ± 500us   5.5/s
+  Name     Rank     Relative      Median   Ops  
+---------  ----  ---------------  ------  ------
+cjson        ≈1  █            1x     2ms   500/s
+rapidjson    ≈1  █            1x     2ms   500/s
+rsjson        3  ██        ↓5.5x    11ms  90.9/s
+dkjson        4  ████████ ↓17.5x    35ms  28.6/s
 
 --------------------
-Decoding (Time): 10000 iters
+Decoding (Time): 1000 iters
 --------------------
- Name   Rank     Relative      Median   Ops  
-------  ----  ---------------  ------  ------
-cjson      1  █            1x    21ms  47.6/s
-rsjson     2  ██████   ↓4.05x    85ms  11.8/s
-dkjson     3  ████████ ↓5.14x   108ms   9.3/s
+  Name     Rank    Relative       Median      Ops 
+---------  ----  ------------  ------------  -----
+cjson        ≈1  █         1x           2ms  500/s
+rapidjson    ≈1  █         1x           2ms  500/s
+rsjson        3  ██████   ↓4x           8ms  125/s
+dkjson        4  ████████ ↓5x  10ms ± 500us  100/s
 ```
 
 Memory:
 
 ```shell
 --------------------
-Encoding (Mem): 10000 iters
+Encoding (Mem): 1000 iters
 --------------------
- Name   Rank     Relative        Median  
-------  ----  ---------------  ----------
-rsjson     1  █████        1x  13kB ± 4kB
-cjson      2  ██████   ↓1.34x        18kB
-dkjson     3  ████████ ↓1.54x        21kB
+  Name     Rank     Relative        Median   
+---------  ----  ---------------  -----------
+cjson         1  ███          1x         13kB
+dkjson        2  ██████   ↓1.92x         24kB
+rsjson       ≈3  ███████  ↓2.15x  27kB ± 155B
+rapidjson    ≈3  ████████ ↓2.29x  29kB ± 17kB
 
 --------------------
-Decoding (Mem): 10000 iters
+Decoding (Mem): 1000 iters
 --------------------
- Name   Rank     Relative        Median  
-------  ----  ---------------  ----------
-dkjson    ≈1  ███████      1x  19kB ± 7kB
-cjson     ≈1  ███████  ↓1.02x  20kB ± 9kB
-rsjson     3  ████████ ↓1.02x        20kB
+  Name     Rank     Relative        Median   
+---------  ----  ---------------  -----------
+rsjson       ≈1  █            1x   5kB ± 22kB
+dkjson       ≈1  ████     ↓2.43x   13kB ± 3kB
+rapidjson     3  ███████  ↓4.12x         21kB
+cjson         4  ████████ ↓4.61x  24kB ± 880B
 ```
