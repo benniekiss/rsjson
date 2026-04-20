@@ -9,7 +9,7 @@ use mlua::prelude::{Lua, LuaError, LuaResult, LuaSerdeExt, LuaString, LuaTable, 
 use crate::config::{DecodeConfig, EncodeConfig};
 
 #[cfg_attr(feature = "module", mlua::lua_module(name = "serde_json"))]
-pub fn rsjson(lua: &Lua) -> LuaResult<LuaTable> {
+pub fn rsjson_lua(lua: &Lua) -> LuaResult<LuaTable> {
     let table = lua.create_table()?;
 
     table.set("null", lua.null())?;
@@ -42,7 +42,7 @@ mod test {
     fn setup_lua() -> Lua {
         let lua = Lua::new();
 
-        let table = rsjson(&lua).unwrap();
+        let table = rsjson_lua(&lua).unwrap();
         lua.globals().set("rsjson", table).unwrap();
 
         lua
