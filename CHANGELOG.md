@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2](https://github.com/benniekiss/rsjson/compare/v0.1.1...v0.1.2) - 2026-04-20
+
+### Added
+
+- lua bindings for serde-json
+
+### Other
+
+- release v0.1.1 ([#1](https://github.com/benniekiss/rsjson/pull/1))
+- set initial crates.io token
+- *(deps)* pin dependencies ([#2](https://github.com/benniekiss/rsjson/pull/2))
+- *(deps)* update renovatebot/github-action action to v46.1.10
+
 ## [0.1.1](https://github.com/benniekiss/rsjson/compare/v0.1.0...v0.1.1) - 2026-04-20
 
 ### Added
