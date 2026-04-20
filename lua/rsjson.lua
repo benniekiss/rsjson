@@ -1,13 +1,13 @@
 --- A Lua interface to the rust `serde-json` crate.
 
-local serde_json = require("serde_json")
+local rsjson_lua = require("rsjson_lua")
 
 local rsjson = {}
 
 --- Low-level serde API
 ---
 ---@type table
-rsjson.serde = serde_json
+rsjson.serde = rsjson_lua
 
 --- Represents the JSON `null` value.
 --- This can be used in the place of
@@ -16,7 +16,7 @@ rsjson.serde = serde_json
 ---@alias rsjson.null lightuserdata
 
 ---@type rsjson.null
-rsjson.null = serde_json.null
+rsjson.null = rsjson.serde.null
 
 ---@class (exact) rsjson.EncodeConfig: userdata
 ---
@@ -29,7 +29,7 @@ rsjson.null = serde_json.null
 ---@field error_cycles boolean Error on cycles
 ---
 ---@field new fun(): rsjson.EncodeConfig
-rsjson.EncodeConfig = serde_json.EncodeConfig
+rsjson.EncodeConfig = rsjson.serde.EncodeConfig
 
 ---@class (exact) rsjson.DecodeConfig: userdata
 ---
@@ -38,7 +38,7 @@ rsjson.EncodeConfig = serde_json.EncodeConfig
 ---@field set_array_mt boolean Set the metatable of JSON array tables to `mlua::Lua::array_metatable`
 ---
 ---@field new fun(): rsjson.DecodeConfig
-rsjson.DecodeConfig = serde_json.DecodeConfig
+rsjson.DecodeConfig = rsjson.serde.DecodeConfig
 
 --- Serialize a Lua object into a JSON string
 ---
@@ -47,7 +47,7 @@ rsjson.DecodeConfig = serde_json.DecodeConfig
 ---
 ---@return string # The serialized Lua object
 function rsjson.encode(obj, config)
-    return serde_json.encode(obj, config)
+    return rsjson.serde.encode(obj, config)
 end
 
 --- Deserialize a JSON string into a Lua object
@@ -57,7 +57,7 @@ end
 ---
 ---@return any # The deserialized JSON object
 function rsjson.decode(str, config)
-    return serde_json.decode(str, config)
+    return rsjson.serde.decode(str, config)
 end
 
 --- Serialize a Lua object to a file

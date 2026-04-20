@@ -1,4 +1,4 @@
-# rsjson
+# rsjson-lua
 
 ```{include} ../README.md
 :start-line: 2

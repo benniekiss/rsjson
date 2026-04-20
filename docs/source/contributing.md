@@ -31,7 +31,7 @@ here](https://prek.j178.dev/installation/)
 ```shell
 # Clone the repo
 git clone https://github.com/benniekiss/rsjson
-cd minijinja-lua
+cd rsjson
 
 # Install the toolchain for the project
 rustup install

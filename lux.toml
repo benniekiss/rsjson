@@ -1,8 +1,8 @@
-package = "rsjson"
+package = "rsjson-lua"
 lua = ">=5.1"
 
 [description]
-summary = "Lua bindings for serde-json"
+summary = "a json library for lua using serde-json"
 maintainer = "benniekiss"
 homepage = "https://github.com/benniekiss/rsjson"
 issues_url = "https://github.com/benniekiss/rsjson/issues"
@@ -19,7 +19,7 @@ default_features = false
 features = ["module"]
 
 [build.modules]
-"serde_json" = "rsjson_lua"
+"rsjson_lua" = "rsjson_lua"
 
 [build.include]
 "lua/rsjson.lua" = "rsjson.lua"
