@@ -169,8 +169,10 @@ impl<'de, 'lua> Visitor<'de> for LuaJsonVisitor<'lua> {
 
             Some(first) => {
                 let hint = map.size_hint().unwrap_or(0);
-                let table =
-                    self.lua.create_table_with_capacity(0, hint).map_err(de::Error::custom)?;
+                let table = self
+                    .lua
+                    .create_table_with_capacity(0, hint)
+                    .map_err(de::Error::custom)?;
 
                 let first_key = self
                     .lua
