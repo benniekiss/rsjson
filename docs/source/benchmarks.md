@@ -26,26 +26,26 @@ pretty=false
 cjson        ≈1  █           1x     2ms    500/s
 rapidjson    ≈1  █           1x     2ms    500/s
 rsjson        3  ██       ↓4.5x     9ms  111.1/s
-dkjson        4  ████████  ↓16x    32ms   31.2/s
+dkjson        4  ████████  ↓15x    30ms   33.3/s
 
-# NOTE: cjson and rapidjson do not implement pretty formatting
+# NOTE: the cjson benchmark does not implement pretty formatting
 pretty=true
   Name     Rank     Relative      Median   Ops  
 ---------  ----  ---------------  ------  ------
 cjson        ≈1  █            1x     2ms   500/s
 rapidjson    ≈1  █            1x     2ms   500/s
-rsjson        3  ██        ↓5.5x    11ms  90.9/s
-dkjson        4  ████████ ↓17.5x    35ms  28.6/s
+rsjson        3  ██          ↓5x    10ms   100/s
+dkjson        4  ████████ ↓16.5x    33ms  30.3/s
 
 --------------------
 Decoding (Time): 1000 iters
 --------------------
-  Name     Rank    Relative       Median      Ops 
----------  ----  ------------  ------------  -----
-cjson        ≈1  █         1x           2ms  500/s
-rapidjson    ≈1  █         1x           2ms  500/s
-rsjson        3  ██████   ↓4x           8ms  125/s
-dkjson        4  ████████ ↓5x  10ms ± 500us  100/s
+  Name     Rank    Relative    Median   Ops 
+---------  ----  ------------  ------  -----
+cjson        ≈1  █         1x     2ms  500/s
+rapidjson    ≈1  █         1x     2ms  500/s
+rsjson        3  ██████   ↓4x     8ms  125/s
+dkjson        4  ████████ ↓5x    10ms  100/s
 ```
 
 Memory:

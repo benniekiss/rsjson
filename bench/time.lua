@@ -80,6 +80,7 @@ local encoding = luamark.compare_time({
             rsjson = rsjson_config,
             dkjson = { indent = pretty },
             cjson = {},
+            rapidjson = { pretty = pretty },
          }
       end
    }
