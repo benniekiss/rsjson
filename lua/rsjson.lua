@@ -1,3 +1,5 @@
+--- SPDX-License-Identifier: MIT
+---
 --- A Lua interface to the rust `serde-json` crate.
 
 local rsjson_lua = require("rsjson_lua")
