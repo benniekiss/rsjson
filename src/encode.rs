@@ -44,15 +44,9 @@ pub(crate) fn encode(
 mod test {
     use super::*;
 
-    fn setup_lua() -> Lua {
-        let lua = Lua::new();
-
-        lua
-    }
-
     #[test]
     fn it_str_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let te = lua.create_string("one two three").unwrap();
         let res = encode(&lua, &LuaValue::String(te), None).unwrap();
@@ -62,7 +56,7 @@ mod test {
 
     #[test]
     fn it_int_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = encode(&lua, &LuaValue::Integer(99), None).unwrap();
 
@@ -71,7 +65,7 @@ mod test {
 
     #[test]
     fn it_float_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = encode(&lua, &LuaValue::Number(9.9), None).unwrap();
 
@@ -80,7 +74,7 @@ mod test {
 
     #[test]
     fn it_bool_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = encode(&lua, &LuaValue::Boolean(true), None).unwrap();
 
@@ -93,7 +87,7 @@ mod test {
 
     #[test]
     fn it_nil_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = encode(&lua, &LuaValue::Nil, None).unwrap();
 
@@ -102,7 +96,7 @@ mod test {
 
     #[test]
     fn it_array_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let te = lua.create_sequence_from(vec![1, 2, 3]).unwrap();
         let res = encode(&lua, &LuaValue::Table(te), None).unwrap();
@@ -112,7 +106,7 @@ mod test {
 
     #[test]
     fn it_table_to_json() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let mut config = EncodeConfig::new();
         config.sort_keys = true;

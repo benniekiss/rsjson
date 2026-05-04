@@ -230,15 +230,9 @@ mod test {
 
     use super::*;
 
-    fn setup_lua() -> Lua {
-        let lua = Lua::new();
-
-        lua
-    }
-
     #[test]
     fn it_json_to_str() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, br#""one two three""#, None)
             .unwrap()
@@ -250,7 +244,7 @@ mod test {
 
     #[test]
     fn it_json_to_int() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, b"99", None).unwrap().as_integer().unwrap();
 
@@ -259,7 +253,7 @@ mod test {
 
     #[test]
     fn it_json_to_float() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, b"9.9", None).unwrap().as_number().unwrap();
 
@@ -268,7 +262,7 @@ mod test {
 
     #[test]
     fn it_json_cast_u64_to_f64() {
-        let lua = setup_lua();
+        let lua = Lua::new();
         let mut config = DecodeConfig::new();
         config.cast_u64_to_f64 = true;
 
@@ -284,7 +278,7 @@ mod test {
 
     #[test]
     fn it_json_err_cast_u64_to_f64() {
-        let lua = setup_lua();
+        let lua = Lua::new();
         let mut config = DecodeConfig::new();
         config.cast_u64_to_f64 = false;
 
@@ -297,20 +291,20 @@ mod test {
 
     #[test]
     fn it_json_to_bool() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, b"true", None).unwrap().as_boolean().unwrap();
 
-        assert_eq!(res, true);
+        assert!(res);
 
         let res = decode(&lua, b"false", None).unwrap().as_boolean().unwrap();
 
-        assert_eq!(res, false);
+        assert!(!res);
     }
 
     #[test]
     fn it_json_to_null() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, b"null", None).unwrap();
 
@@ -319,7 +313,7 @@ mod test {
 
     #[test]
     fn it_json_to_nil() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let mut config = DecodeConfig::new();
         config.null = false;
@@ -331,7 +325,7 @@ mod test {
 
     #[test]
     fn it_json_to_array() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let te = lua.create_sequence_from(vec![1, 2, 3]).unwrap();
         let res = decode(&lua, b"[1,2,3]", None).unwrap();
@@ -344,7 +338,7 @@ mod test {
 
     #[test]
     fn it_json_array_mt() {
-        let lua = setup_lua();
+        let lua = Lua::new();
         let mut config = DecodeConfig::new();
         config.set_array_mt = true;
 
@@ -359,7 +353,7 @@ mod test {
 
     #[test]
     fn it_json_no_array_mt() {
-        let lua = setup_lua();
+        let lua = Lua::new();
         let mut config = DecodeConfig::new();
         config.set_array_mt = false;
 
@@ -374,7 +368,7 @@ mod test {
 
     #[test]
     fn it_json_to_table() {
-        let lua = setup_lua();
+        let lua = Lua::new();
 
         let res = decode(&lua, br#"{"a":1,"b":2,"c":3}"#, None)
             .unwrap()
