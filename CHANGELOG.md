@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1](https://github.com/benniekiss/rsjson-lua/compare/v0.2.0...v0.2.1) - 2026-05-04
+
+### Fixed
+
+- use size_hint when deserializing table
+- don't silently swallow serialization errors
+
+### Other
+
+- add SPDX id
+- add file extension to license
+- disable some test dependencies
+- clippy fixes
+- formatting
+- *(deps)* update renovatebot/github-action action to v46.1.13 ([#13](https://github.com/benniekiss/rsjson-lua/pull/13))
+- sync lux.lock
+- update benchmarks
+- remove artifact package name prefix
+- migrate to editorconfig
+- run cargo fmt
+- *(deps)* update renovatebot/github-action action to v46.1.12 ([#11](https://github.com/benniekiss/rsjson-lua/pull/11))
+- *(deps)* update j178/prek-action digest to 6ad8027 ([#12](https://github.com/benniekiss/rsjson-lua/pull/12))
+- *(docs)* update benchmark commands
+- add benchmark deps to test_dependencies table
+- release v0.1.6 ([#9](https://github.com/benniekiss/rsjson-lua/pull/9))
+
 ## [0.2.0](https://github.com/benniekiss/rsjson-lua/compare/v0.1.5...v0.2.0) - 2026-04-20
 
 ### Added
