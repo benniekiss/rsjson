@@ -40,7 +40,7 @@ dkjson        4  ████████ ↓16.5x    33ms  30.3/s
 --------------------
 Decoding (Time): 1000 iters
 --------------------
-  Name     Rank    Relative    Median   Ops 
+  Name     Rank    Relative    Median   Ops
 ---------  ----  ------------  ------  -----
 cjson        ≈1  █         1x     2ms  500/s
 rapidjson    ≈1  █         1x     2ms  500/s
@@ -54,7 +54,7 @@ Memory:
 --------------------
 Encoding (Mem): 1000 iters
 --------------------
-  Name     Rank     Relative        Median   
+  Name     Rank     Relative        Median  
 ---------  ----  ---------------  -----------
 cjson         1  ███          1x         13kB
 dkjson        2  ██████   ↓1.92x         24kB
@@ -64,7 +64,7 @@ rapidjson    ≈3  ████████ ↓2.29x  29kB ± 17kB
 --------------------
 Decoding (Mem): 1000 iters
 --------------------
-  Name     Rank     Relative        Median   
+  Name     Rank     Relative        Median  
 ---------  ----  ---------------  -----------
 rsjson       ≈1  █            1x   5kB ± 22kB
 dkjson       ≈1  ████     ↓2.43x   13kB ± 3kB
