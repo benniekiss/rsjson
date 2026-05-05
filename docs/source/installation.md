@@ -21,6 +21,7 @@ cargo install rsjson-lua --no-default-features --features module,lua{version}
 Prebuilt binaries:
 
 ```shell
+lx --extra-servers https://benniekiss.github.io/rocks/ install rsjson-lua
 ```
 
 Compile from source:
